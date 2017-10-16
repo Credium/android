@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SIGNAL</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_id">ID</string>
+    <string name="prompt_password">Password </string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_join_in">Join in</string>
+    <string name="error_invalid_id">This ID is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="checkbox_remember">Remember login</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- For Bottom Bar -->
+    <string name="title_home">Home</string>
+    <string name="title_mypage">MyPage</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_more">More</string>
+
+    <!-- For Facebook Login -->
+    <string name="facebook_app_id">537958343216334</string>
+    <string name="fb_login_protocol_scheme">fb537958343216334</string>
+
+    <!-- For Kakao Login -->
+    <string name="kakao_app_key">e79acd7470c135a33679ca38d3e0fefe</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+
+</resources>
