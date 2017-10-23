@@ -27,7 +27,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_above="@+id/make_meeting_button"
-                app:srcCompat="@drawable/b" />
+                app:srcCompat="@drawable/p10" />
 
             <Button
                 android:id="@+id/make_meeting_button"

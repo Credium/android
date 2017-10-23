@@ -3,6 +3,7 @@ package org.androidtown.mysignalapplication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -26,11 +27,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
@@ -81,6 +84,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private LinearLayout mLoginJoinForm;
+
 
     //Facebook Login
     private LoginButton loginButton;
@@ -118,12 +123,34 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
+        Button mJoininButton = (Button) findViewById(R.id.join_in_button);
+
         mSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
+        mJoininButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(i);
+            }
+        });
+
+        // 키보드 올라왔을 때, 바탕 터치시 키보드 내려가게 하기
+        mLoginJoinForm = (LinearLayout)findViewById(R.id.login_join_form);
+        mLoginJoinForm.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mIdView.getWindowToken(), 0);
+            }
+        });
+
+
+        /* Facebook > custom 으로 변경하기
 
         loginButton = (LoginButton)findViewById(R.id.login_button); //페이스북 로그인 버튼
         //유저 정보, 친구정보, 이메일 정보등을 수집하기 위해서는 허가(퍼미션)를 받아야 함
@@ -165,6 +192,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onCancel() { }
         });
+        */
 /*
         //Kakao
         UserManagement.requestLogout(new LogoutResponseCallback() {
@@ -346,11 +374,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isIdValid(String id) {
         //TODO: Replace this with your own logic
+        // 서버에서 정보 가져와서 판단
         return id.length() > 4;
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
+        // 서버에서 정보 가져와서 판단
         return password.length() > 4;
     }
 

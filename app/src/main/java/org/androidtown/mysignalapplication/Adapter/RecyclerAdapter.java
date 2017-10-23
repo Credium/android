@@ -121,7 +121,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         public ViewHolder(View itemView) {
             super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.meeting_image_sign);
+            image = (ImageView) itemView.findViewById(R.id.rec_pub_image);
 
             userName = (TextView) itemView.findViewById(R.id.userName);
             userTitle = (TextView) itemView.findViewById(R.id.userTitle);

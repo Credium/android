@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.androidtown.mysignalapplication.Fragments.HomeFragment">
+    tools:context="org.androidtown.mysignalapplication.Fragments.HomeFragment"
+    android:background="@mipmap/background">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -12,19 +13,107 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <SearchView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="37dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            android:paddingTop="16dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/HomeRecyclerView"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </FrameLayout>
+                android:layout_height="115dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="221dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    app:srcCompat="@drawable/pic_navbar_logotype" />
+
+                <SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryLight" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/underbar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="17dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_weight="1"
+                    android:text="만나 보세요!"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/p13"
+                            android:layout_marginRight="18dp"/>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:background="@color/colorPrimaryLight">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryLight"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/HomeRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>

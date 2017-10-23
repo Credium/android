@@ -117,11 +117,11 @@ public class MyPageFragment extends Fragment {
         List<CardItem> items = new ArrayList<>();
         CardItem[] item = new CardItem[ITEM_SIZE];
         // Item (image, userName, userTitle, meetingTitle, meetingContents)
-        item[0] = new CardItem(R.drawable.a, "김수현", "배우", "볼링치러 가요", "abc");
-        item[1] = new CardItem(R.drawable.a, "김수현", "배우", "같이 노래해요", "abc");
-        item[2] = new CardItem(R.drawable.a, "김수현", "배우", "독서 피크닉 떠나요", "abc");
-        item[3] = new CardItem(R.drawable.a, "김수현", "배우", "연극보러 갈까요?", "abc");
-        item[4] = new CardItem(R.drawable.a, "김수현", "배우", "루프탑 카페에서 디저트 먹어요", "abc");
+        item[0] = new CardItem(R.drawable.p1, "김수현", "배우", "볼링치러 가요", "abc");
+        item[1] = new CardItem(R.drawable.p6, "김수현", "배우", "같이 노래해요", "abc");
+        item[2] = new CardItem(R.drawable.p7, "김수현", "배우", "독서 피크닉 떠나요", "abc");
+        item[3] = new CardItem(R.drawable.p8, "김수현", "배우", "연극보러 갈까요?", "abc");
+        item[4] = new CardItem(R.drawable.p9, "김수현", "배우", "루프탑 카페에서 디저트 먹어요", "abc");
 
         for (int i = 0; i < ITEM_SIZE; i++) {
             items.add(item[i]);

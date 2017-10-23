@@ -27,6 +27,11 @@ import java.util.List;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+/* 다음에 이런 효과 추가하기
+https://github.com/ksoichiro/Android-ObservableScrollView/tree/master/library/src/main/java/com/github/ksoichiro/android/observablescrollview
+ */
+
 public class HomeFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -73,20 +78,23 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.HomeRecyclerView);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
         List<CardItem> items = new ArrayList<>();
+
         CardItem[] item = new CardItem[ITEM_SIZE];
         // Item (image, userName, userTitle, meetingTitle, meetingContents)
-        item[0] = new CardItem(R.drawable.a, "김수현", "배우", "볼링치러 가요", "abc");
-        item[1] = new CardItem(R.drawable.b, "박보검", "뮤지컬배우", "같이 노래해요", "abc");
-        item[2] = new CardItem(R.drawable.c, "유아인", "비평론가", "독서 피크닉 떠나요", "abc");
-        item[3] = new CardItem(R.drawable.d, "송중기", "대한민국 육군 대위", "연극보러 갈까요?", "abc");
-        item[4] = new CardItem(R.drawable.e, "유승호", "CG", "루프탑 카페에서 디저트 먹어요", "abc");
+        item[0] = new CardItem(R.drawable.p1, "김수현", "배우", "볼링치러 가요", "abc");
+        item[1] = new CardItem(R.drawable.p2, "박보검", "뮤지컬배우", "같이 노래해요", "abc");
+        item[2] = new CardItem(R.drawable.p3, "유아인", "비평론가", "독서 피크닉 떠나요", "abc");
+        item[3] = new CardItem(R.drawable.p4, "송중기", "대한민국 육군 대위", "연극보러 갈까요?", "abc");
+        item[4] = new CardItem(R.drawable.p5, "유승호", "CG", "루프탑 카페에서 디저트 먹어요", "abc");
 
         for (int i = 0; i < ITEM_SIZE; i++) {
             items.add(item[i]);
+
         }
 
         recyclerView.setAdapter(new RecyclerAdapter(getActivity().getApplicationContext(), items, R.layout.fragment_home));
